@@ -2,7 +2,6 @@
 
 # Configuration
 BIN_NAME="pokemon-rs"
-OLD_BIN_NAME="pokemon-colorscripts"
 LOCAL_BIN="$HOME/.local/bin"
 SYSTEM_BIN="/usr/bin"
 
@@ -15,8 +14,8 @@ if [[ -f "$LOCAL_BIN/$BIN_NAME" ]]; then
 fi
 
 # 2. Remove symlinks or old names
-if [[ -f "$LOCAL_BIN/$OLD_BIN_NAME" ]]; then
-    rm -f "$LOCAL_BIN/$OLD_BIN_NAME"
+if [[ -f "$LOCAL_BIN/$BIN_NAME" ]]; then
+    rm -f "$LOCAL_BIN/$BIN_NAME"
     echo "Removed old binary alias from $LOCAL_BIN"
 fi
 
@@ -24,7 +23,6 @@ fi
 if [[ -f "$SYSTEM_BIN/$BIN_NAME" ]]; then
     echo "Requires sudo to remove from $SYSTEM_BIN"
     sudo rm -f "$SYSTEM_BIN/$BIN_NAME"
-    sudo rm -f "$SYSTEM_BIN/$OLD_BIN_NAME"
 fi
 
 # 4. Optional: Clean up cache
