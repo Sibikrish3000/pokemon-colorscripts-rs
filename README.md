@@ -102,6 +102,7 @@ pokemon-rs -r --no-title | fastfetch --logo -
 Add to your `$PROFILE`:
 
 ```powershell
+[Console]::OutputEncoding = [System.Text.Encoding]::UTF8
 pokemon-rs.exe -r --no-title
 
 ```
